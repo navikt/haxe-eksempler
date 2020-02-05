@@ -28,9 +28,9 @@ class Main {
 
 	static function render(root:DivElement) {
 		var app = ReactDOM.render(jsx('
-				<div>
-					<MinKomponent/>
-					
+				<div key="1">
+					<MinKomponent key="minkomp"/>
+
 					<div className="heisannDiv">Heisann og Hoppsann</div>
 					<Hovedknapp onClick=${function(e:ReactMouseEvent) {
 						Browser.window.alert("Du trykket på hovedknappen!");
@@ -42,13 +42,14 @@ class Main {
 
 	static function lagNoenElementer() : Array<ReactElement> {
 		final fare1 = React.createElement(Fareknapp, { 
+			key: "f1",
 			spinner: false,
 			onClick: function(e:ReactMouseEvent) {
 				Browser.window.alert("Du trykket på fare1-knappen!");
 			}
 		}, "TRALALAL");
 		final fare2 = jsx('
-			<Fareknapp spinner=${true} onClick=${function(e:ReactMouseEvent) {
+			<Fareknapp spinner=${true} key="f2" onClick=${function(e:ReactMouseEvent) {
 				Browser.window.alert("Du trykket på fare2-knappen!");
 			}}>FARE</Fareknapp>
 		');

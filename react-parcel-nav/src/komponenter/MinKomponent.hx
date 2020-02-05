@@ -6,15 +6,17 @@ import react.ReactMacro.jsx;
 import komponenter.NavKomp;
 
 class MinKomponent extends ReactComponentOfState<{tallet: Int, teksten: String}> {
-	override function componentWillMount():Void {
-		this.setState({
+	function new() {
+		super();
+		state = {
 			tallet: 2,
-			teksten: "staten"
-		});		
+			teksten: "state_from_constructor"
+		};
 	}
+
 	override function render() : ReactElement{
 		return jsx('
-		<div>
+		<div key="1">
 			<div>State = ${this.state.tallet} ${this.state.teksten}</div>
 			<Hovedknapp onClick=${function(e:ReactMouseEvent) {
 				this.setState({
