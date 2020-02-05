@@ -1,0 +1,23 @@
+{
+  "name": "haxe-react-parcel-nav-test",
+  "version": "1.0.0",
+  "description": "haxe-react-parcel-nav-test",
+  "main": "index.js",
+  "author": "roy",
+  "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "lodash.throttle": "^4.1.1",
+    "nav-frontend-core": "^4.0.11",
+    "nav-frontend-js-utils": "^1.0.8",
+    "nav-frontend-knapper": "^1.0.34",
+    "nav-frontend-knapper-style": "^0.3.32",
+    "nav-frontend-typografi-style": "^1.0.17",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "less": "^3.10.3",
+    "parcel-bundler": "^1.12.4"
+  }
+}

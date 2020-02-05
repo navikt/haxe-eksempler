@@ -1,0 +1,6 @@
+-lib react
+
+-cp src
+
+-js www/index.js
+-main Main
