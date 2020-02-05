@@ -1,20 +1,14 @@
 import js.Browser;
 import js.html.DivElement;
 import js.Lib;
+import react.React;
 import react.ReactDOM;
 import react.ReactMacro.jsx;
 import react.ReactComponent;
 import react.ReactMouseEvent;
 
-/**
- * "extern class"-deklarasjon for å mappe til ekstern ikke-Haxe kode.
- * jsRequire-annotasjonen sier i tillegg at det må kjøres et require-kall for laste denne klassen.
- * Dette ender opp i Javascript som "var Hovedknapp = require("nav-frontend-knapper").Hovedknapp;"
- * Skal Haxe-koden benytte andre metoder/properties enn de som arves fra ReactComponent så må disse deklareres.
- * Typisk vil slike extern-deklarasjoner ikke ligge her men i et lite felles-bibliotek.
- */
-@:jsRequire("nav-frontend-knapper", "Hovedknapp")
-extern class Hovedknapp extends ReactComponent {}
+import komponenter.MinKomponent;
+import komponenter.NavKomp;
 
 class Main {
 	public static function main() {
@@ -35,11 +29,29 @@ class Main {
 	static function render(root:DivElement) {
 		var app = ReactDOM.render(jsx('
 				<div>
+					<MinKomponent/>
+					
 					<div className="heisannDiv">Heisann og Hoppsann</div>
 					<Hovedknapp onClick=${function(e:ReactMouseEvent) {
 						Browser.window.alert("Du trykket på hovedknappen!");
 					}}>Dette er en Hovedknapp</Hovedknapp>
+					${lagNoenElementer()}
 				</div>
 			'), root);
+	}
+
+	static function lagNoenElementer() : Array<ReactElement> {
+		final fare1 = React.createElement(Fareknapp, { 
+			spinner: false,
+			onClick: function(e:ReactMouseEvent) {
+				Browser.window.alert("Du trykket på fare1-knappen!");
+			}
+		}, "TRALALAL");
+		final fare2 = jsx('
+			<Fareknapp spinner=${true} onClick=${function(e:ReactMouseEvent) {
+				Browser.window.alert("Du trykket på fare2-knappen!");
+			}}>FARE</Fareknapp>
+		');
+		return [fare1, fare2];
 	}
 }
