@@ -40,6 +40,6 @@ class SomeClassTest extends Test {
     }
 
     function testStringThrower() {
-        Assert.raises(someThing.stringThrower, "oh no!");
+        Assert.raises(someThing.stringThrower, String);
     }
 }
