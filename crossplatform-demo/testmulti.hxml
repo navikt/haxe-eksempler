@@ -37,6 +37,10 @@
 --lua luatest/TestAll.lua
 #-cmd lua luatest/TestAll.lua
 
+--next
+--swf flashtest/TestAll.swf
+# Open in flash-supported browser or standalone flashplayer
+
 # Requires C#-compiler
 #--next
 #--cs cstest

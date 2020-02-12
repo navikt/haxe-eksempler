@@ -27,6 +27,9 @@
 --next
 --lua luaout/Main.lua
 
+--next
+--swf flashout/Main.swf
+
 # Requires C#-compiler
 #--next
 #--cs csout
