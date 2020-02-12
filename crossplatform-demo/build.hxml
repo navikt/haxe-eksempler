@@ -1,0 +1,5 @@
+-cp src
+-lib utest
+-D analyzer-optimize
+-main Main
+--interp

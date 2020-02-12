@@ -1,0 +1,43 @@
+-cp src
+-cp test
+-lib utest
+-main TestAll
+--each
+
+--next
+--js jstest/testall.js
+-cmd node jstest/testall.js
+
+--next
+--java javatest
+-cmd java -jar javatest/TestAll.jar
+
+--next
+--java jvmtest
+-D jvm
+-cmd java -jar jvmtest/TestAll.jar
+
+--next
+--python pythontest/TestAll.py
+-cmd python3 pythontest/TestAll.py
+
+--next
+--neko nekotest/TestAll.n
+-cmd neko nekotest/TestAll.n
+
+--next
+--cpp cpptest
+-cmd cpptest/TestAll
+
+--next
+--php phptest
+-cmd php phptest/index.php
+
+--next
+--lua luatest/TestAll.lua
+#-cmd lua luatest/TestAll.lua
+
+# Requires C#-compiler
+#--next
+#--cs cstest
+#-cmd cstest/TestAll.exe

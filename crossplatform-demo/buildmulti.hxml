@@ -1,0 +1,32 @@
+-cp src
+-main Main
+--each
+
+--next
+--js jsout/main.js
+
+--next
+--java javaout
+
+--next
+--java jvmout
+-D jvm
+
+--next
+--python pythonout/Main.py
+
+--next
+--neko nekoout/Main.n
+
+--next
+--cpp cppout
+
+--next
+--php phpout
+
+--next
+--lua luaout/Main.lua
+
+# Requires C#-compiler
+#--next
+#--cs csout
