@@ -1,0 +1,11 @@
+-cp src
+-cp test
+-lib utest
+-lib test-adapter
+-lib hxnodejs
+-main TestAll
+# "debug" causes sourceMaps to be generated (to map from js-code to hx-code)
+-debug
+-js tests.js
+
+-cmd node tests.js

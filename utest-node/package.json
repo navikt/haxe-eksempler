@@ -1,0 +1,16 @@
+{
+    "name": "utest-node",
+    "version": "1.0.0",
+    "description": "VSCode/utest-example, VSCode sin nodejs-debugger-oppsett krever script.debug i package.json",
+    "main": "bin/index.js",
+    "author": "roy",
+    "license": "MIT",
+    "dependencies": {
+    },
+    "devDependencies": {
+    },
+    "scripts": {
+      "debug": "node --inspect-brk tests.js"
+    }
+  }
+  
